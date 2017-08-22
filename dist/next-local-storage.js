@@ -1,7 +1,7 @@
 (function () {
 
   'use strict';
-  
+
   var global = global || window || this;
   var nx = global.nx || require('next-js-core2');
   var NxAbstractStorage = nx.AbstractStorage || require('next-abstract-storage');
@@ -11,7 +11,7 @@
     methods:{
       init: function(inPrefix){
         this.base({
-          engine:'localStorage',
+          engine: localStorage,
           prefix: inPrefix || ''
         });
       }
