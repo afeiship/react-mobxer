@@ -8,11 +8,17 @@
 </head>
 <body>
   <script src="../node_modules/next-js-core2/dist/next-js-core2.js"></script>
+  <script src="../node_modules/next-is/dist/next-is.js"></script>
+  <script src="../node_modules/next-json/dist/next-json.js"></script>
   <script src="../node_modules/next-abstract-storage/dist/next-abstract-storage.js"></script>
   <script src="../src/next-local-storage.js"></script>
   <script>
     var _local = new nx.LocalStorage('tt');
-    _local.set('test1',1234)
+    _local.set('test1',1234);
+
+    console.log(
+      _local.gets()
+    )
   </script>
 </body>
 </html>

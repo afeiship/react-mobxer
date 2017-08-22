@@ -11,7 +11,7 @@
     methods:{
       init: function(inPrefix){
         this.base({
-          engine: localStorage,
+          engine: global.localStorage,
           prefix: inPrefix || ''
         });
       }
