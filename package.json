@@ -1,6 +1,6 @@
 {
   "name": "next-local-storage",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "LocalStorage based on next.",
   "homepage": "https://github.com/afeiship/next-local-storage",
   "author": {

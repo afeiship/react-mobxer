@@ -1,7 +1,5 @@
 (function () {
 
-  'use strict';
-
   var global = global || this || self || window;
   var nx = global.nx || require('next-js-core2');
   var NxAbstractStorage = nx.AbstractStorage || require('next-abstract-storage');
