@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   <script src="../node_modules/next-js-core2/dist/next-js-core2.js"></script>
   <script src="../node_modules/next-is/dist/next-is.js"></script>
@@ -14,11 +16,11 @@
   <script src="../src/next-local-storage.js"></script>
   <script>
     var _local = new nx.LocalStorage('tt');
-    _local.set('test1',1234);
-
+    _local.set('test1', 1234);
     console.log(
       _local.gets()
     )
   </script>
 </body>
+
 </html>
