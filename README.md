@@ -12,3 +12,6 @@ import NxLocalStorage from '@feizheng/next-local-storage';
 
 // code goes here:
 ```
+
+## resources
+- https://github.com/afeiship/next-abstract-storage
