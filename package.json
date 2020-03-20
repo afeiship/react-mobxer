@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/next-local-storage",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "LocalStorage based on next.",
   "homepage": "https://github.com/afeiship/next-local-storage",
   "author": {
@@ -31,7 +31,7 @@
     "yargs": "^15.1.0"
   },
   "dependencies": {
-    "@feizheng/next-abstract-storage": "^1.0.1",
+    "@feizheng/next-abstract-storage": "^2.0.0",
     "@feizheng/next-js-core2": "^2.4.1"
   },
   "publishConfig": {

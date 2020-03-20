@@ -2,8 +2,8 @@
  * name: @feizheng/next-local-storage
  * description: LocalStorage based on next.
  * url: https://github.com/afeiship/next-local-storage
- * version: 1.0.0
- * date: 2019-12-18 19:29:54
+ * version: 1.0.1
+ * date: 2020-03-20 13:17:39
  * license: MIT
  */
 
