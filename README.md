@@ -6,11 +6,6 @@
 npm install -S @feizheng/next-local-storage
 ```
 
-## apis
-| api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
-
 ## usage
 ```js
 import NxLocalStorage from '@feizheng/next-local-storage';
