@@ -1,5 +1,6 @@
 (function() {
   var global = global || this || window || Function('return this')();
+  var nx = global.nx || require('@jswork/next');
   var NxAbstractStorage = nx.AbstractStorage || require('@jswork/next-abstract-storage');
 
   var NxLocalStorage = nx.declare('nx.LocalStorage', {

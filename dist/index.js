@@ -3,12 +3,13 @@
  * description: LocalStorage based on next.
  * homepage: https://github.com/afeiship/next-local-storage
  * version: 1.0.0
- * date: 2020-11-22 14:00:51
+ * date: 2020-11-22 14:04:44
  * license: MIT
  */
 
 (function() {
   var global = global || this || window || Function('return this')();
+  var nx = global.nx || require('@jswork/next');
   var NxAbstractStorage = nx.AbstractStorage || require('@jswork/next-abstract-storage');
 
   var NxLocalStorage = nx.declare('nx.LocalStorage', {

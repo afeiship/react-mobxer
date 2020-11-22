@@ -18,7 +18,7 @@ npm install -S @jswork/next-local-storage
 ```js
 import NxLocalStorage from '@jswork/next-local-storage';
 
-const store = new nx.LocalStorage('tt');
+const store = new nx.NxLocalStorage('tt');
 store.set('test1', 1234);
 console.log( store.gets() );
 ```
