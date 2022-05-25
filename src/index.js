@@ -7,7 +7,7 @@
     extends: NxAbstractStorage,
     methods: {
       init: function (inPrefix) {
-        this.$base.init({
+        this.$base.init.call(this, {
           engine: global.localStorage,
           prefix: inPrefix || ''
         });
