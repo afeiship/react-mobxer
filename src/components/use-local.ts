@@ -1,5 +1,7 @@
 import { useLocalObservable } from 'mobx-react';
 
-export default (inValue: any, annotations?: any) => {
-  return useLocalObservable(() => inValue, annotations);
-};
+function useLocal<TStore extends Record<string, any>>(value: TStore, annotations?): TStore {
+  return useLocalObservable(() => value, annotations);
+}
+
+export default useLocal;
