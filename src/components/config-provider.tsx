@@ -27,7 +27,7 @@ export const sharedStore: SharedStore<any> = {
   compositeStore: {}
 };
 
-export default ({ children, context, inject, options }: MobxConfigProps) => {
+function ConfigProvider<T>({ children, context, inject, options }: MobxConfigProps) {
   // config mobx
   configure({ enforceActions: 'never', ...options });
 
@@ -38,9 +38,11 @@ export default ({ children, context, inject, options }: MobxConfigProps) => {
     const storeKey = StoreClass.storeKey || getFileName(key);
     acc[storeKey] = new StoreClass();
     return acc;
-  }, {});
+  }, {}) as T;
 
   if (inject) inject(sharedStore.compositeStore);
 
   return children;
-};
+}
+
+export default ConfigProvider;
