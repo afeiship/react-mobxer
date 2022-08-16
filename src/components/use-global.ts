@@ -4,4 +4,4 @@ import { sharedStore } from './config-provider';
 export default () => {
   const storeCtx = useRef(createContext(sharedStore.compositeStore));
   return useContext(storeCtx.current);
-}
+};
