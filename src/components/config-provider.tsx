@@ -13,7 +13,7 @@ interface MobxConfigProps {
 
 // type object key is a string, value is dynamic Class, use T generic to avoid error
 type SharedStore = {
-  compositeStore: { [key: string]: unknown };
+  compositeStore: { [key: string]: any };
 };
 
 function getFileName(inKey) {
