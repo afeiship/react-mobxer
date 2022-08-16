@@ -1,7 +1,7 @@
 {
   "name": "@jswork/react-mobxer",
   "homepage": "https://js.work",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React mobx manager.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -84,5 +84,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/afeiship/boilerplate-react-ts-component.git"
-  }
+  },
+  "keywords": [
+    "manager",
+    "mobx",
+    "provider",
+    "react",
+    "store"
+  ]
 }
