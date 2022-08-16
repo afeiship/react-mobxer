@@ -7,6 +7,7 @@ const FILENAME_RE = /[.-_/]/;
 interface MobxConfigProps {
   children: ReactElement;
   context: any;
+  inject?: (v: any) => void;
   options?: {};
 }
 
@@ -26,7 +27,7 @@ export const sharedStore: SharedStore = {
   compositeStore: {}
 };
 
-export default ({ children, context, options }: MobxConfigProps) => {
+export default ({ children, context, inject, options }: MobxConfigProps) => {
   // config mobx
   configure({ enforceActions: 'never', ...options });
 
@@ -38,6 +39,8 @@ export default ({ children, context, options }: MobxConfigProps) => {
     acc[storeKey] = new StoreClass();
     return acc;
   }, {});
+
+  if (inject) inject(sharedStore.compositeStore);
 
   return children;
 };
