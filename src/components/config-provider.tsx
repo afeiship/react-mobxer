@@ -12,8 +12,8 @@ interface MobxConfigProps {
 }
 
 // type object key is a string, value is dynamic Class, use T generic to avoid error
-type SharedStore = {
-  compositeStore: { [key: string]: any };
+type SharedStore<T> = {
+  compositeStore: T;
 };
 
 function getFileName(inKey) {
@@ -23,7 +23,7 @@ function getFileName(inKey) {
   return camelcase(valid.join('-'));
 }
 
-export const sharedStore: SharedStore = {
+export const sharedStore: SharedStore<any> = {
   compositeStore: {}
 };
 
