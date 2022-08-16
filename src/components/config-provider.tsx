@@ -15,8 +15,13 @@ function getFileName(inKey) {
   return camelcase(valid.join('-'));
 }
 
-export const sharedStore = {
-  compositeStore: null
+// type object key is a string, value is dynamic Class, use T generic to avoid error
+type SharedStore = {
+  compositeStore: { [key: string]: unknown }
+};
+
+export const sharedStore: SharedStore = {
+  compositeStore: {}
 };
 
 
