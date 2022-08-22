@@ -7,6 +7,7 @@ const FILENAME_RE = /[.-_/]/;
 interface MobxConfigProps {
   children: ReactElement;
   context: any;
+  harmony?: boolean;
   inject?: (v: any) => void;
   options?: {};
 }
@@ -27,20 +28,23 @@ export const sharedStore: SharedStore<any> = {
   compositeStore: {}
 };
 
-function ConfigProvider<T>({ children, context, inject, options }: MobxConfigProps) {
+function ConfigProvider<T>({ children, context, harmony, inject, options }: MobxConfigProps) {
   // config mobx
   configure({ enforceActions: 'never', ...options });
 
   const keys = context.keys();
 
-  sharedStore.compositeStore = keys.reduce((acc, key) => {
+  const root = sharedStore.compositeStore = keys.reduce((acc, key) => {
     const StoreClass = context(key).default;
     const storeKey = StoreClass.storeKey || getFileName(key);
     acc[storeKey] = new StoreClass();
     return acc;
   }, {}) as T;
 
-  if (inject) inject(sharedStore.compositeStore);
+  if (inject) inject(root);
+
+  // special for my '@jswork/next' framework
+  if (harmony && window['nx']) window['nx'].set('$root', root);
 
   return children;
 }
