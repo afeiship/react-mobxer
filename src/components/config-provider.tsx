@@ -29,11 +29,11 @@ export const sharedStore: SharedStore<any> = {
 };
 
 function ConfigProvider<T>({ children, context, harmony, inject, options }: MobxConfigProps) {
+  const harmonyCtx = window['nx'];
   // config mobx
   configure({ enforceActions: 'never', ...options });
 
   const keys = context.keys();
-
   const root = sharedStore.compositeStore = keys.reduce((acc, key) => {
     const StoreClass = context(key).default;
     const storeKey = StoreClass.storeKey || getFileName(key);
@@ -44,7 +44,7 @@ function ConfigProvider<T>({ children, context, harmony, inject, options }: Mobx
   if (inject) inject(root);
 
   // special for my '@jswork/next' framework
-  if (harmony && window['nx']) window['nx'].set('$root', root);
+  if (harmony && harmonyCtx) harmonyCtx.set(harmonyCtx, '$root', root);
 
   return children;
 }
