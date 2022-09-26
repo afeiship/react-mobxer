@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { configure } from 'mobx';
 import camelcase from 'camelcase';
 
-const FILENAME_RE = /[.-_/]/;
+const FILENAME_RE = /[._/-]/;
 
 interface MobxConfigProps {
   children: ReactElement;
@@ -20,7 +20,7 @@ type SharedStore<T> = {
 function getFileName(inKey) {
   const paths = inKey.split(FILENAME_RE);
   const valid = paths.filter(Boolean);
-  valid.pop();
+  if (valid.length > 1) valid.pop();
   return camelcase(valid.join('-'));
 }
 
