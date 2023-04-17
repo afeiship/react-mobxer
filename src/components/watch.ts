@@ -11,5 +11,5 @@ export function watch(inTarget: any, inCallback: WatchCallback) {
 }
 
 export const useWatch = (inTarget: any, inCallback: WatchCallback) => {
-  useEffect(() => watch(inTarget, inCallback), [inTarget]);
+  useEffect(() => watch(inTarget, inCallback), []);
 };
