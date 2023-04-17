@@ -1,12 +1,12 @@
 import { toJS, autorun } from 'mobx';
 import { useEffect } from 'react';
 
-type WatchCallback = (inTarget: any, inPlain) => void;
+type WatchCallback = (inPlain: any) => void;
 
 export function watch(inTarget: any, inCallback: WatchCallback) {
   return autorun(() => {
     const plain = toJS(inTarget);
-    inCallback(inTarget, plain);
+    inCallback(plain);
   });
 }
 
